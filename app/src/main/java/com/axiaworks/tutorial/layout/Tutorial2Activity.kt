@@ -27,7 +27,7 @@ class Tutorial2Activity: AppCompatActivity() {
                 if (saveUserInfo()) {
                     finish()
                 } else {
-                    Toast.makeText(applicationContext, R.string.tutorial2_name_validation_error_black, Toast.LENGTH_SHORT).show()
+                    Toast.makeText(applicationContext, R.string.tutorial2_name_validation_error_blank, Toast.LENGTH_SHORT).show()
                 }
             }
         }

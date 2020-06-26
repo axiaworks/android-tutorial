@@ -11,6 +11,6 @@
     <string name="tutorial2_gender_girl">女の子</string>
     <string name="tutorial2_cancel">キャンセル</string>
     <string name="tutorial2_register">登録</string>
-    <string name="tutorial2_name_validation_error_black">名前は空にできません。</string>
+    <string name="tutorial2_name_validation_error_blank">名前は空にできません。</string>
 
 </resources>
