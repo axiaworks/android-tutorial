@@ -19,6 +19,7 @@
         </activity>
 
         <activity android:name=".layout.Tutorial2Activity" />
+        <activity android:name=".adapter.Tutorial3Activity" />
 
     </application>
 

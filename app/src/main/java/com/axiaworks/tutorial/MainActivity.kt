@@ -3,6 +3,7 @@ package com.axiaworks.tutorial
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
+import com.axiaworks.tutorial.adapter.Tutorial3Activity
 import com.axiaworks.tutorial.layout.Tutorial2Activity
 
 class MainActivity : AppCompatActivity() {
@@ -13,6 +14,11 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.tutorial2_button)?.apply {
             setOnClickListener {
                 startActivity(Tutorial2Activity.callingIntent(applicationContext))
+            }
+        }
+        findViewById<Button>(R.id.tutorial3_button)?.apply {
+            setOnClickListener {
+                startActivity(Tutorial3Activity.callingIntent(applicationContext))
             }
         }
     }
