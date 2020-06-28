@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tutorial3_image_id_list_all">
+        <item>@drawable/yasai_cabbage</item>
+        <item>@drawable/yasai_kyuuri</item>
+        <item>@drawable/yasai_ninjin</item>
+        <item>@drawable/yasai_piman</item>
+        <item>@drawable/yasai_tamanegi</item>
+        <item>@drawable/yasai_tomato</item>
+        <item>@drawable/fish_fugu</item>
+        <item>@drawable/fish_maguro</item>
+        <item>@drawable/fish_sakana_sake</item>
+        <item>@drawable/fish_sakana_tai</item>
+        <item>@drawable/fish_tako</item>
+        <item>@drawable/fish_unagi</item>
+        <item>@drawable/niku_butabara_block</item>
+        <item>@drawable/niku_gyu</item>
+        <item>@drawable/niku_hikiniku</item>
+        <item>@drawable/niku_steak</item>
+        <item>@drawable/niku_tongue</item>
+        <item>@drawable/niku_tori</item>
+    </string-array>
+    <string-array name="tutorial3_image_id_list_yasai">
+        <item>@drawable/yasai_cabbage</item>
+        <item>@drawable/yasai_kyuuri</item>
+        <item>@drawable/yasai_ninjin</item>
+        <item>@drawable/yasai_piman</item>
+        <item>@drawable/yasai_tamanegi</item>
+        <item>@drawable/yasai_tomato</item>
+    </string-array>
+    <string-array name="tutorial3_image_id_list_fish">
+        <item>@drawable/fish_fugu</item>
+        <item>@drawable/fish_maguro</item>
+        <item>@drawable/fish_sakana_sake</item>
+        <item>@drawable/fish_sakana_tai</item>
+        <item>@drawable/fish_tako</item>
+        <item>@drawable/fish_unagi</item>
+    </string-array>
+    <string-array name="tutorial3_image_id_list_niku">
+        <item>@drawable/niku_butabara_block</item>
+        <item>@drawable/niku_gyu</item>
+        <item>@drawable/niku_hikiniku</item>
+        <item>@drawable/niku_steak</item>
+        <item>@drawable/niku_tongue</item>
+        <item>@drawable/niku_tori</item>
+    </string-array>
+
+</resources>

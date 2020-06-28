@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string-array name="tutorial3_food_type">
+        <item>全て</item>
+        <item>野菜</item>
+        <item>魚</item>
+        <item>肉</item>
+    </string-array>
+
+</resources>

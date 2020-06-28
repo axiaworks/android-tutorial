@@ -3,6 +3,7 @@
 
     <!-- MainActivity  -->
     <string name="main_study_layout">レイアウトを学ぶ</string>
+    <string name="main_study_adapter">アダプターを学ぶ</string>
 
     <!--  Tutorial2 layout  -->
     <string name="tutorial2_name">名前</string>
@@ -12,5 +13,11 @@
     <string name="tutorial2_cancel">キャンセル</string>
     <string name="tutorial2_register">登録</string>
     <string name="tutorial2_name_validation_error_blank">名前は空にできません。</string>
+
+    <!-- Tutorial3 adapter -->
+    <string name="tutorial3_adapter">アダプター</string>
+    <string name="tutorial3_vertical">Vertical</string>
+    <string name="tutorial3_horizontal">Horizontal</string>
+    <string name="tutorial3_grid">Grid</string>
 
 </resources>
