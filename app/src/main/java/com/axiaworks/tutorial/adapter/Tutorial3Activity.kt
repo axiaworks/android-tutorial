@@ -30,7 +30,7 @@ class Tutorial3Activity : AppCompatActivity() {
                 android.R.layout.simple_list_item_1,
                 resources.getStringArray(R.array.tutorial3_food_type)
             )
-            onItemSelectedListener = object: AdapterView.OnItemSelectedListener {
+            onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
                 override fun onNothingSelected(parent: AdapterView<*>?) {
                 }
 
@@ -40,51 +40,42 @@ class Tutorial3Activity : AppCompatActivity() {
                     position: Int,
                     id: Long
                 ) {
-                    when(position) {
-                        0 -> imageRecyclerView.adapter = FoodImageAdapter(
-                            getResIdList(R.array.tutorial3_image_id_list_all)
-                        )
-                        1 -> imageRecyclerView.adapter = FoodImageAdapter(
-                            getResIdList(R.array.tutorial3_image_id_list_yasai)
-                        )
-                        2 -> imageRecyclerView.adapter = FoodImageAdapter(
-                            getResIdList(R.array.tutorial3_image_id_list_fish)
-                        )
-                        3 -> imageRecyclerView.adapter = FoodImageAdapter(
-                            getResIdList(R.array.tutorial3_image_id_list_niku)
-                        )
-                        else -> {
-                            imageRecyclerView.adapter = FoodImageAdapter(emptyList())
+                    imageRecyclerView.adapter = FoodImageAdapter(
+                        when (position) {
+                            0 -> getResIdList(R.array.tutorial3_image_id_list_all)
+                            1 -> getResIdList(R.array.tutorial3_image_id_list_yasai)
+                            2 -> getResIdList(R.array.tutorial3_image_id_list_fish)
+                            3 -> getResIdList(R.array.tutorial3_image_id_list_niku)
+                            else -> emptyList()
                         }
-                    }
+                    )
                 }
             }
         }
         findViewById<RadioGroup>(R.id.layout_type_group)?.apply {
             setOnCheckedChangeListener { _, checkedId ->
-                when(checkedId) {
-                    R.id.vertical_button -> {
-                        imageRecyclerView.layoutManager = LinearLayoutManager(
-                            this@Tutorial3Activity,
-                            LinearLayoutManager.VERTICAL,
-                            false
-                        )
-                    }
-                    R.id.horizontal_button -> {
-                        imageRecyclerView.layoutManager = LinearLayoutManager(
-                            this@Tutorial3Activity,
-                            LinearLayoutManager.HORIZONTAL,
-                            false
-                        )
-                    }
-                    R.id.grid_button -> {
-                        imageRecyclerView.layoutManager = GridLayoutManager(
-                            this@Tutorial3Activity,
-                            2,
-                            GridLayoutManager.VERTICAL,
-                            false
-                        )
-                    }
+                imageRecyclerView.layoutManager = when (checkedId) {
+                    R.id.vertical_button -> LinearLayoutManager(
+                        this@Tutorial3Activity,
+                        LinearLayoutManager.VERTICAL,
+                        false
+                    )
+                    R.id.horizontal_button -> LinearLayoutManager(
+                        this@Tutorial3Activity,
+                        LinearLayoutManager.HORIZONTAL,
+                        false
+                    )
+                    R.id.grid_button -> GridLayoutManager(
+                        this@Tutorial3Activity,
+                        2,
+                        GridLayoutManager.VERTICAL,
+                        false
+                    )
+                    else -> LinearLayoutManager(
+                        this@Tutorial3Activity,
+                        LinearLayoutManager.VERTICAL,
+                        false
+                    )
                 }
             }
         }
