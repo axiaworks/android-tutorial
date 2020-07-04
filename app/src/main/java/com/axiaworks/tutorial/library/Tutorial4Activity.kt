@@ -3,17 +3,10 @@ package com.axiaworks.tutorial.library
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
+import androidx.databinding.DataBindingUtil
 import com.axiaworks.tutorial.R
-import com.bumptech.glide.Glide
-import com.bumptech.glide.load.resource.bitmap.RoundedCorners
-import com.bumptech.glide.request.RequestOptions
-import jp.wasabeef.glide.transformations.BlurTransformation
-import jp.wasabeef.glide.transformations.gpu.ContrastFilterTransformation
-import jp.wasabeef.glide.transformations.gpu.ToonFilterTransformation
+import com.axiaworks.tutorial.databinding.ActivityTutorial4Binding
 
 class Tutorial4Activity : AppCompatActivity() {
     companion object {
@@ -46,80 +39,62 @@ class Tutorial4Activity : AppCompatActivity() {
         )
     }
 
-    private var currentUserData: UserData? = null
+    private lateinit var binding: ActivityTutorial4Binding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_tutorial4)
-
-        findViewById<Button>(R.id.user1_button)?.setOnClickListener {
-            setUserData(userDataList[0])
-        }
-        findViewById<Button>(R.id.user2_button)?.setOnClickListener {
-            setUserData(userDataList[1])
-        }
-        findViewById<Button>(R.id.user3_button)?.setOnClickListener {
-            setUserData(userDataList[2])
-        }
-        findViewById<Button>(R.id.user4_button)?.setOnClickListener {
-            setUserData(userDataList[3])
-        }
-
-        findViewById<Button>(R.id.effect_normal_button)?.setOnClickListener {
-            currentUserData?.let {
-                it.effect = EffectType.NORMAL
-                setUserData(it)
-            }
-        }
-        findViewById<Button>(R.id.effect_corner_button)?.setOnClickListener {
-            currentUserData?.let {
-                it.effect = EffectType.ROUNDED_CORNER
-                setUserData(it)
-            }
-        }
-        findViewById<Button>(R.id.effect_blur_button)?.setOnClickListener {
-            currentUserData?.let {
-                it.effect = EffectType.BLUR
-                setUserData(it)
-            }
-        }
-        findViewById<Button>(R.id.effect_toon_button)?.setOnClickListener {
-            currentUserData?.let {
-                it.effect = EffectType.TOON
-                setUserData(it)
-            }
-        }
-        findViewById<Button>(R.id.effect_contrust_button)?.setOnClickListener {
-            currentUserData?.let {
-                it.effect = EffectType.CONTRAST
-                setUserData(it)
-            }
+        binding = DataBindingUtil.setContentView<ActivityTutorial4Binding>(
+            this,
+            R.layout.activity_tutorial4
+        ).apply {
+            userData = userDataList[0]
+            activity = this@Tutorial4Activity
         }
     }
 
-    private fun setUserData(userData: UserData) {
-        currentUserData = userData
-        findViewById<TextView>(R.id.name_text_view)?.text = userData.name
-        findViewById<TextView>(R.id.age_text_view)?.text = userData.age.toString()
-        findViewById<TextView>(R.id.gender_text_view)?.text = if (userData.gender == 0) "男性" else "女性"
-        findViewById<ImageView>(R.id.image_view)?.apply {
-            when (userData.effect) {
-                EffectType.ROUNDED_CORNER -> RequestOptions.bitmapTransform(RoundedCorners(30))
-                EffectType.BLUR -> RequestOptions.bitmapTransform(BlurTransformation(25, 3))
-                EffectType.TOON -> RequestOptions.bitmapTransform(ToonFilterTransformation(10.0f, 5.0f))
-                EffectType.CONTRAST -> RequestOptions.bitmapTransform(ContrastFilterTransformation(1.8f))
-                else -> null
-            }?.let {
-                Glide.with(this)
-                    .load(userData.imageUrl)
-                    .apply(it)
-                    .into(this)
-            }?:run {
-                Glide.with(this)
-                    .load(userData.imageUrl)
-                    .centerCrop()
-                    .into(this)
-            }
+    fun onClickUser1() {
+        binding.userData = userDataList[0]
+    }
+
+    fun onClickUser2() {
+        binding.userData = userDataList[1]
+    }
+
+    fun onClickUser3() {
+        binding.userData = userDataList[2]
+    }
+
+    fun onClickUser4() {
+        binding.userData = userDataList[3]
+    }
+
+    fun onClickNormal() {
+        binding.userData = binding.userData?.apply {
+            effect = EffectType.NORMAL
+        }
+    }
+
+    fun onClickCorner() {
+        binding.userData = binding.userData?.apply {
+            effect = EffectType.ROUNDED_CORNER
+        }
+    }
+
+    fun onClickBlur() {
+        binding.userData = binding.userData?.apply {
+            effect = EffectType.BLUR
+        }
+    }
+
+    fun onClickToon() {
+        binding.userData = binding.userData?.apply {
+            effect = EffectType.TOON
+        }
+    }
+
+    fun onClickContrast() {
+        binding.userData = binding.userData?.apply {
+            effect = EffectType.CONTRAST
         }
     }
 

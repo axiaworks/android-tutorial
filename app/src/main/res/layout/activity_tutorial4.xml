@@ -1,191 +1,218 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
-    <Button
-        android:id="@+id/user1_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/tutorial4_button1"
-        app:layout_constraintEnd_toStartOf="@+id/user2_button"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <data>
 
-    <Button
-        android:id="@+id/user2_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/tutorial4_button2"
-        app:layout_constraintEnd_toStartOf="@+id/user3_button"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/user1_button"
-        app:layout_constraintTop_toTopOf="parent" />
+        <variable
+            name="userData"
+            type="com.axiaworks.tutorial.library.UserData" />
 
-    <Button
-        android:id="@+id/user3_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/tutorial4_button3"
-        app:layout_constraintEnd_toStartOf="@+id/user4_button"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/user2_button"
-        app:layout_constraintTop_toTopOf="parent" />
+        <variable
+            name="activity"
+            type="com.axiaworks.tutorial.library.Tutorial4Activity" />
+    </data>
 
-    <Button
-        android:id="@+id/user4_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:text="@string/tutorial4_button4"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/user3_button"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <ImageView
-        android:id="@+id/image_view"
-        android:layout_width="340dp"
-        android:layout_height="340dp"
-        android:layout_marginTop="16dp"
-        android:contentDescription="@null"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/effect_normal_button"
-        tools:srcCompat="@tools:sample/avatars" />
+        <Button
+            android:id="@+id/user1_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:onClick="@{() -> activity.onClickUser1()}"
+            android:text="@string/tutorial4_button1"
+            app:layout_constraintEnd_toStartOf="@+id/user2_button"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/name_text_label"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_view"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="24dp"
-        android:layout_marginTop="24dp"
-        android:text="@string/tutorial4_user_name" />
+        <Button
+            android:id="@+id/user2_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:onClick="@{() -> activity.onClickUser2()}"
+            android:text="@string/tutorial4_button2"
+            app:layout_constraintEnd_toStartOf="@+id/user3_button"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/user1_button"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/name_text_view"
-        app:layout_constraintBottom_toBottomOf="@+id/name_text_label"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/name_text_label"
-        app:layout_constraintTop_toTopOf="@+id/name_text_label"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginEnd="24dp" />
+        <Button
+            android:id="@+id/user3_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:onClick="@{() -> activity.onClickUser3()}"
+            android:text="@string/tutorial4_button3"
+            app:layout_constraintEnd_toStartOf="@+id/user4_button"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/user2_button"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/age_text_label"
-        app:layout_constraintStart_toStartOf="@+id/name_text_label"
-        app:layout_constraintTop_toBottomOf="@+id/name_text_label"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/tutorial4_user_age" />
+        <Button
+            android:id="@+id/user4_button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:onClick="@{() -> activity.onClickUser4()}"
+            android:text="@string/tutorial4_button4"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/user3_button"
+            app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/age_text_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toEndOf="@+id/name_text_label"
-        app:layout_constraintTop_toBottomOf="@+id/name_text_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp" />
+        <TextView
+            android:id="@+id/effect_text_view"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="7dp"
+            android:layout_marginTop="16dp"
+            android:text="@string/tutorial4_effect"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/user1_button" />
 
-    <TextView
-        android:id="@+id/gender_text_label"
-        app:layout_constraintStart_toStartOf="@+id/age_text_label"
-        app:layout_constraintTop_toBottomOf="@+id/age_text_label"
-        android:layout_width="100dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:text="@string/tutorial4_user_gender" />
+        <Button
+            android:id="@+id/effect_normal_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:onClick="@{() -> activity.onClickNormal()}"
+            android:text="@string/tutorial4_normal"
+            app:layout_constraintEnd_toStartOf="@+id/effect_corner_button"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/effect_text_view" />
 
-    <TextView
-        android:id="@+id/gender_text_view"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/gender_text_label"
-        app:layout_constraintTop_toBottomOf="@+id/age_text_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="24dp" />
+        <Button
+            android:id="@+id/effect_corner_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> activity.onClickCorner()}"
+            android:text="@string/tutorial4_rounded_corner"
+            app:layout_constraintBottom_toBottomOf="@+id/effect_normal_button"
+            app:layout_constraintEnd_toStartOf="@+id/effect_blur_button"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/effect_normal_button"
+            app:layout_constraintTop_toTopOf="@+id/effect_normal_button" />
 
-    <TextView
-        android:id="@+id/effect_text_view"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/user1_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="7dp"
-        android:layout_marginTop="16dp"
-        android:text="@string/tutorial4_effect" />
+        <Button
+            android:id="@+id/effect_blur_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> activity.onClickBlur()}"
+            android:text="@string/tutorial4_blur"
+            app:layout_constraintBottom_toBottomOf="@+id/effect_normal_button"
+            app:layout_constraintEnd_toStartOf="@+id/effect_toon_button"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/effect_corner_button"
+            app:layout_constraintTop_toTopOf="@+id/effect_normal_button" />
 
-    <Button
-        android:id="@+id/effect_normal_button"
-        app:layout_constraintEnd_toStartOf="@+id/effect_corner_button"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/effect_text_view"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:text="@string/tutorial4_normal" />
+        <Button
+            android:id="@+id/effect_toon_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> activity.onClickToon()}"
+            android:text="@string/tutorial4_toon"
+            app:layout_constraintBottom_toBottomOf="@+id/effect_normal_button"
+            app:layout_constraintEnd_toStartOf="@+id/effect_contrust_button"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/effect_blur_button"
+            app:layout_constraintTop_toTopOf="@+id/effect_normal_button" />
 
-    <Button
-        android:id="@+id/effect_corner_button"
-        app:layout_constraintBottom_toBottomOf="@+id/effect_normal_button"
-        app:layout_constraintEnd_toStartOf="@+id/effect_blur_button"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/effect_normal_button"
-        app:layout_constraintTop_toTopOf="@+id/effect_normal_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/tutorial4_rounded_corner" />
+        <Button
+            android:id="@+id/effect_contrust_button"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:onClick="@{() -> activity.onClickContrast()}"
+            android:text="@string/tutorial4_contrast"
+            app:layout_constraintBottom_toBottomOf="@+id/effect_normal_button"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/effect_toon_button"
+            app:layout_constraintTop_toTopOf="@+id/effect_normal_button" />
 
-    <Button
-        android:id="@+id/effect_blur_button"
-        app:layout_constraintBottom_toBottomOf="@+id/effect_normal_button"
-        app:layout_constraintEnd_toStartOf="@+id/effect_toon_button"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/effect_corner_button"
-        app:layout_constraintTop_toTopOf="@+id/effect_normal_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/tutorial4_blur" />
+        <ImageView
+            android:id="@+id/image_view"
+            userImage="@{userData}"
+            android:layout_width="340dp"
+            android:layout_height="340dp"
+            android:layout_marginTop="16dp"
+            android:contentDescription="@null"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/effect_normal_button"
+            tools:srcCompat="@tools:sample/avatars" />
 
-    <Button
-        android:id="@+id/effect_toon_button"
-        app:layout_constraintBottom_toBottomOf="@+id/effect_normal_button"
-        app:layout_constraintEnd_toStartOf="@+id/effect_contrust_button"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/effect_blur_button"
-        app:layout_constraintTop_toTopOf="@+id/effect_normal_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/tutorial4_toon" />
+        <TextView
+            android:id="@+id/name_text_label"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="24dp"
+            android:layout_marginTop="24dp"
+            android:text="@string/tutorial4_user_name"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/image_view" />
 
-    <Button
-        android:id="@+id/effect_contrust_button"
-        app:layout_constraintBottom_toBottomOf="@+id/effect_normal_button"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toEndOf="@+id/effect_toon_button"
-        app:layout_constraintTop_toTopOf="@+id/effect_normal_button"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="@string/tutorial4_contrast" />
+        <TextView
+            android:id="@+id/name_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="24dp"
+            android:text="@{userData.name}"
+            app:layout_constraintBottom_toBottomOf="@+id/name_text_label"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/name_text_label"
+            app:layout_constraintTop_toTopOf="@+id/name_text_label" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <TextView
+            android:id="@+id/age_text_label"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/tutorial4_user_age"
+            app:layout_constraintStart_toStartOf="@+id/name_text_label"
+            app:layout_constraintTop_toBottomOf="@+id/name_text_label" />
+
+        <TextView
+            android:id="@+id/age_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            app:age="@{userData.age}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toEndOf="@+id/name_text_label"
+            app:layout_constraintTop_toBottomOf="@+id/name_text_view" />
+
+        <TextView
+            android:id="@+id/gender_text_label"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:text="@string/tutorial4_user_gender"
+            app:layout_constraintStart_toStartOf="@+id/age_text_label"
+            app:layout_constraintTop_toBottomOf="@+id/age_text_label" />
+
+        <TextView
+            android:id="@+id/gender_text_view"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="24dp"
+            app:gender="@{userData.gender}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/gender_text_label"
+            app:layout_constraintTop_toBottomOf="@+id/age_text_view" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
