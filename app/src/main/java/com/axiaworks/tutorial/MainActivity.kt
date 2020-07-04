@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.widget.Button
 import com.axiaworks.tutorial.adapter.Tutorial3Activity
 import com.axiaworks.tutorial.layout.Tutorial2Activity
+import com.axiaworks.tutorial.library.Tutorial4Activity
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -19,6 +20,11 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.tutorial3_button)?.apply {
             setOnClickListener {
                 startActivity(Tutorial3Activity.callingIntent(applicationContext))
+            }
+        }
+        findViewById<Button>(R.id.tutorial4_button)?.apply {
+            setOnClickListener {
+                startActivity(Tutorial4Activity.callingIntent(applicationContext))
             }
         }
     }
