@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <Button
+        android:id="@+id/button"
+        app:layout_constraintEnd_toStartOf="@+id/button2"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/tutorial4_button1" />
+
+    <Button
+        android:id="@+id/button2"
+        app:layout_constraintEnd_toStartOf="@+id/button3"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/tutorial4_button2" />
+
+    <Button
+        android:id="@+id/button3"
+        app:layout_constraintEnd_toStartOf="@+id/button4"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button2"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/tutorial4_button3" />
+
+    <Button
+        android:id="@+id/button4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/button3"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="@string/tutorial4_button4" />
+
+    <ImageView
+        android:id="@+id/image_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/effect_normal_button"
+        tools:srcCompat="@tools:sample/avatars"
+        android:layout_width="340dp"
+        android:layout_height="340dp"
+        android:layout_marginTop="16dp" />
+
+    <TextView
+        android:id="@+id/name_text_label"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/image_view"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="24dp"
+        android:layout_marginTop="24dp"
+        android:text="@string/tutorial4_user_name" />
+
+    <TextView
+        android:id="@+id/name_text_view"
+        app:layout_constraintBottom_toBottomOf="@+id/name_text_label"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/name_text_label"
+        app:layout_constraintTop_toTopOf="@+id/name_text_label"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="24dp" />
+
+    <TextView
+        android:id="@+id/age_text_label"
+        app:layout_constraintStart_toStartOf="@+id/name_text_label"
+        app:layout_constraintTop_toBottomOf="@+id/name_text_label"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/tutorial4_user_age" />
+
+    <TextView
+        android:id="@+id/age_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toEndOf="@+id/name_text_label"
+        app:layout_constraintTop_toBottomOf="@+id/name_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp" />
+
+    <TextView
+        android:id="@+id/gender_text_label"
+        app:layout_constraintStart_toStartOf="@+id/age_text_label"
+        app:layout_constraintTop_toBottomOf="@+id/age_text_label"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:text="@string/tutorial4_user_gender" />
+
+    <TextView
+        android:id="@+id/gender_text_view"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/gender_text_label"
+        app:layout_constraintTop_toBottomOf="@+id/age_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="24dp" />
+
+    <TextView
+        android:id="@+id/effect_text_view"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="7dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/tutorial4_effect" />
+
+    <Button
+        android:id="@+id/effect_normal_button"
+        app:layout_constraintEnd_toStartOf="@+id/effect_corner_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/effect_text_view"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginTop="8dp"
+        android:text="@string/tutorial4_normal" />
+
+    <Button
+        android:id="@+id/effect_corner_button"
+        app:layout_constraintBottom_toBottomOf="@+id/effect_normal_button"
+        app:layout_constraintEnd_toStartOf="@+id/effect_blur_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/effect_normal_button"
+        app:layout_constraintTop_toTopOf="@+id/effect_normal_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/tutorial4_rounded_corner" />
+
+    <Button
+        android:id="@+id/effect_blur_button"
+        app:layout_constraintBottom_toBottomOf="@+id/effect_normal_button"
+        app:layout_constraintEnd_toStartOf="@+id/effect_toon_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/effect_corner_button"
+        app:layout_constraintTop_toTopOf="@+id/effect_normal_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/tutorial4_blur" />
+
+    <Button
+        android:id="@+id/effect_toon_button"
+        app:layout_constraintBottom_toBottomOf="@+id/effect_normal_button"
+        app:layout_constraintEnd_toStartOf="@+id/effect_contrust_button"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/effect_blur_button"
+        app:layout_constraintTop_toTopOf="@+id/effect_normal_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/tutorial4_toon" />
+
+    <Button
+        android:id="@+id/effect_contrust_button"
+        app:layout_constraintBottom_toBottomOf="@+id/effect_normal_button"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/effect_toon_button"
+        app:layout_constraintTop_toTopOf="@+id/effect_normal_button"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/tutorial4_contrast" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

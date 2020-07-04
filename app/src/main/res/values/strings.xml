@@ -4,6 +4,7 @@
     <!-- MainActivity  -->
     <string name="main_study_layout">レイアウトを学ぶ</string>
     <string name="main_study_adapter">アダプターを学ぶ</string>
+    <string name="main_study_library">外部ライブラリを学ぶ</string>
 
     <!--  Tutorial2 layout  -->
     <string name="tutorial2_name">名前</string>
@@ -19,5 +20,21 @@
     <string name="tutorial3_vertical">Vertical</string>
     <string name="tutorial3_horizontal">Horizontal</string>
     <string name="tutorial3_grid">Grid</string>
+
+    <!-- Tutorial4 library -->
+    <string name="tutorial4_library">外部ライブラリ</string>
+    <string name="tutorial4_button1">本田翼</string>
+    <string name="tutorial4_button2">新垣結衣</string>
+    <string name="tutorial4_button3">広瀬すず</string>
+    <string name="tutorial4_button4">神谷えりな</string>
+    <string name="tutorial4_effect">効果</string>
+    <string name="tutorial4_normal">通常</string>
+    <string name="tutorial4_rounded_corner">角丸</string>
+    <string name="tutorial4_blur">ぼかし</string>
+    <string name="tutorial4_toon">トゥーン</string>
+    <string name="tutorial4_contrast">コントラスト</string>
+    <string name="tutorial4_user_name">名前</string>
+    <string name="tutorial4_user_age">年齢</string>
+    <string name="tutorial4_user_gender">性別</string>
 
 </resources>
