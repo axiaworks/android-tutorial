@@ -120,13 +120,13 @@
             android:onClick="@{() -> activity.onClickToon()}"
             android:text="@string/tutorial4_toon"
             app:layout_constraintBottom_toBottomOf="@+id/effect_normal_button"
-            app:layout_constraintEnd_toStartOf="@+id/effect_contrust_button"
+            app:layout_constraintEnd_toStartOf="@+id/effect_contrast_button"
             app:layout_constraintHorizontal_bias="0.5"
             app:layout_constraintStart_toEndOf="@+id/effect_blur_button"
             app:layout_constraintTop_toTopOf="@+id/effect_normal_button" />
 
         <Button
-            android:id="@+id/effect_contrust_button"
+            android:id="@+id/effect_contrast_button"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:onClick="@{() -> activity.onClickContrast()}"

@@ -3,6 +3,7 @@ package com.axiaworks.tutorial.adapter
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import android.view.View
 import android.widget.AdapterView
 import android.widget.ArrayAdapter
@@ -88,6 +89,18 @@ class Tutorial3Activity : AppCompatActivity() {
             adapter = FoodImageAdapter(emptyList())
             imageRecyclerView = this
         }
+        supportActionBar?.apply {
+            title = getString(R.string.main_study_adapter)
+            setDisplayHomeAsUpEnabled(true)
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            onBackPressed()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     private fun getResIdList(arrayId: Int): List<Int> {

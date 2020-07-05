@@ -3,6 +3,7 @@ package com.axiaworks.tutorial.library
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
 import com.axiaworks.tutorial.R
@@ -32,8 +33,8 @@ class Tutorial4Activity : AppCompatActivity() {
             ),
             UserData(
                 "神谷えりな",
-                +1,
-                +28,
+                1,
+                28,
                 "http://スマホ壁紙無料.com/wp-content/uploads/2015/02/kamiyaerina-09-a.jpg"
             )
         )
@@ -50,6 +51,18 @@ class Tutorial4Activity : AppCompatActivity() {
             userData = userDataList[0]
             activity = this@Tutorial4Activity
         }
+        supportActionBar?.apply {
+            title = getString(R.string.main_study_library)
+            setDisplayHomeAsUpEnabled(true)
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            onBackPressed()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
     }
 
     fun onClickUser1() {

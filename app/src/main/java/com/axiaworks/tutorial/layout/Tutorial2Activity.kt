@@ -3,6 +3,7 @@ package com.axiaworks.tutorial.layout
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.*
 import androidx.appcompat.app.AppCompatActivity
 import com.axiaworks.tutorial.Property
@@ -31,9 +32,6 @@ class Tutorial2Activity: AppCompatActivity() {
                 }
             }
         }
-        findViewById<TextView>(R.id.title_text_view)?.apply {
-            text = Property.name
-        }
         findViewById<RadioGroup>(R.id.gender_group)?.apply {
             setOnCheckedChangeListener { _, checkedId ->
                 val mainImageView = this@Tutorial2Activity.findViewById<ImageView>(R.id.main_image_view)?: return@setOnCheckedChangeListener
@@ -55,6 +53,18 @@ class Tutorial2Activity: AppCompatActivity() {
             }
         }
 
+        supportActionBar?.apply {
+            title = getString(R.string.main_study_layout)
+            setDisplayHomeAsUpEnabled(true)
+        }
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem): Boolean {
+        if (item.itemId == android.R.id.home) {
+            onBackPressed()
+            return true
+        }
+        return super.onOptionsItemSelected(item)
 
     }
 
