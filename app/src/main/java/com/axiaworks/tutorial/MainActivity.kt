@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Button
 import com.axiaworks.tutorial.adapter.Tutorial3Activity
+import com.axiaworks.tutorial.fragment.Tutorial5Activity
 import com.axiaworks.tutorial.layout.Tutorial2Activity
 import com.axiaworks.tutorial.library.Tutorial4Activity
 
@@ -25,6 +26,11 @@ class MainActivity : AppCompatActivity() {
         findViewById<Button>(R.id.tutorial4_button)?.apply {
             setOnClickListener {
                 startActivity(Tutorial4Activity.callingIntent(applicationContext))
+            }
+        }
+        findViewById<Button>(R.id.tutorial5_button)?.apply {
+            setOnClickListener {
+                startActivity(Tutorial5Activity.callingIntent(applicationContext))
             }
         }
     }
