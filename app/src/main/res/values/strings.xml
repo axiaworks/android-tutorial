@@ -5,6 +5,8 @@
     <string name="main_study_layout">レイアウトを学ぶ</string>
     <string name="main_study_adapter">アダプターを学ぶ</string>
     <string name="main_study_library">外部ライブラリを学ぶ</string>
+    <string name="main_study_fragment">フラグメントを学ぶ</string>
+
 
     <!--  Tutorial2 layout  -->
     <string name="tutorial2_name">名前</string>
@@ -36,5 +38,14 @@
     <string name="tutorial4_user_name">名前</string>
     <string name="tutorial4_user_age">年齢</string>
     <string name="tutorial4_user_gender">性別</string>
+
+    <!-- Tutorial5 fragment -->
+    <string name="tutorial5_fragment_main">MainFragment</string>
+    <string name="tutorial5_fragment_sub">SubFragment</string>
+    <string name="tutorial5_fragment_separate">SeparateFragment</string>
+    <string name="tutorial5_show_sub_fragment">サブフラグメントを表示する</string>
+    <string name="tutorial5_show_confirm_dialog">確認ダイアログを表示</string>
+    <string name="tutorial5_select_fragment_title">切り替えるフラグメントを選択してください</string>
+
 
 </resources>
