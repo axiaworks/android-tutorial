@@ -23,12 +23,20 @@ fun ImageView.userImage(userData: UserData) {
             .load(userData.imageUrl)
             .apply(it)
             .into(this)
-    }?:run {
+    } ?: run {
         Glide.with(this)
             .load(userData.imageUrl)
             .centerCrop()
             .into(this)
     }
+}
+
+@BindingAdapter("setIconUrl")
+fun ImageView.setIconUrl(url: String) {
+    Glide.with(this)
+        .load(url)
+        .apply(RequestOptions.bitmapTransform(RoundedCorners(30)))
+        .into(this)
 }
 
 @BindingAdapter("gender")

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="item"
+            type="com.axiaworks.tutorial.mvvm.response.QiitaItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#eeeeee">
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="8dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="8dp"
+            android:background="@android:color/white"
+            app:cardCornerRadius="4dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/title_text_view"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="16dp"
+                    android:layout_marginEnd="16dp"
+                    android:text="@{item.title}"
+                    android:textColor="@android:color/black"
+                    android:textSize="18sp"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/user_icon_image_view"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <TextView
+                    android:id="@+id/comment_num_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="16dp"
+                    android:text="@string/tutorial6_comment_num"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/user_icon_image_view"
+                    app:layout_constraintTop_toBottomOf="@+id/title_text_view" />
+
+                <TextView
+                    android:id="@+id/comment_num_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@{Integer.toString(item.commentsCount)}"
+                    app:layout_constraintBottom_toBottomOf="@+id/comment_num_label"
+                    app:layout_constraintStart_toEndOf="@+id/comment_num_label"
+                    app:layout_constraintTop_toTopOf="@+id/comment_num_label" />
+
+                <TextView
+                    android:id="@+id/like_count_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/tutorial6_like_count"
+                    app:layout_constraintBottom_toBottomOf="@+id/comment_num_label"
+                    app:layout_constraintStart_toEndOf="@+id/comment_num_value"
+                    app:layout_constraintTop_toTopOf="@+id/comment_num_label" />
+
+                <TextView
+                    android:id="@+id/like_count_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@{Integer.toString(item.likesCount)}"
+                    app:layout_constraintBottom_toBottomOf="@+id/like_count_label"
+                    app:layout_constraintStart_toEndOf="@+id/like_count_label"
+                    app:layout_constraintTop_toTopOf="@+id/like_count_label" />
+
+                <TextView
+                    android:id="@+id/reaction_count_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:text="@string/tutorial6_reaction_count"
+                    app:layout_constraintBottom_toBottomOf="@+id/comment_num_label"
+                    app:layout_constraintStart_toEndOf="@+id/like_count_value"
+                    app:layout_constraintTop_toTopOf="@+id/comment_num_label" />
+
+                <TextView
+                    android:id="@+id/reaction_count_value"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="4dp"
+                    android:text="@{Integer.toString(item.reactionsCount)}"
+                    app:layout_constraintBottom_toBottomOf="@+id/reaction_count_label"
+                    app:layout_constraintStart_toEndOf="@+id/reaction_count_label"
+                    app:layout_constraintTop_toTopOf="@+id/reaction_count_label" />
+
+                <ImageView
+                    android:id="@+id/user_icon_image_view"
+                    setIconUrl="@{item.user.profileImageUrl}"
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:layout_marginStart="8dp"
+                    android:layout_marginTop="8dp"
+                    android:layout_marginBottom="8dp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:srcCompat="@tools:sample/avatars" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.cardview.widget.CardView>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

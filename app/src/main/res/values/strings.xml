@@ -6,6 +6,7 @@
     <string name="main_study_adapter">アダプターを学ぶ</string>
     <string name="main_study_library">外部ライブラリを学ぶ</string>
     <string name="main_study_fragment">フラグメントを学ぶ</string>
+    <string name="main_study_mvvm">MVVMを学ぶ</string>
 
 
     <!--  Tutorial2 layout  -->
@@ -47,5 +48,10 @@
     <string name="tutorial5_show_confirm_dialog">確認ダイアログを表示</string>
     <string name="tutorial5_select_fragment_title">切り替えるフラグメントを選択してください</string>
 
+    <!-- Tutorial6 mvvm -->
+    <string name="tutorial6_search_android">検索[Android]</string>
+    <string name="tutorial6_comment_num">コメント数: </string>
+    <string name="tutorial6_like_count">いいね: </string>
+    <string name="tutorial6_reaction_count">リアクション: </string>
 
 </resources>
