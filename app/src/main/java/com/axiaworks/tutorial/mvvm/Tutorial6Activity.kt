@@ -10,6 +10,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.lifecycle.Observer
 import com.axiaworks.tutorial.R
 import com.axiaworks.tutorial.databinding.ActivityTutorial6Binding
+import com.axiaworks.tutorial.mvvm.response.QiitaItem
 import org.koin.android.viewmodel.ext.android.viewModel
 
 class Tutorial6Activity : AppCompatActivity() {
@@ -30,6 +31,9 @@ class Tutorial6Activity : AppCompatActivity() {
             this, R.layout.activity_tutorial6
         ).apply {
             recyclerView.adapter = QiitaItemAdapter(emptyList()).apply {
+                onClickListener = {
+                    showQiitaItemDialog(it)
+                }
                 this@Tutorial6Activity.adapter = this
             }
             searchButton.setOnClickListener {
@@ -68,5 +72,11 @@ class Tutorial6Activity : AppCompatActivity() {
                 adapter?.setList(list)
             }
         })
+    }
+
+    private fun showQiitaItemDialog(item: QiitaItem) {
+        QiitaItemDialog.newInstance(item.url).apply {
+            show(supportFragmentManager, "QiitaItem")
+        }
     }
 }

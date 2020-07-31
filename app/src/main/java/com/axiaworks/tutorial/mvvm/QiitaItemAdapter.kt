@@ -12,6 +12,8 @@ class QiitaItemAdapter(
     private var itemList: List<QiitaItem>
 ) : RecyclerView.Adapter<QiitaItemAdapter.ViewHolder>() {
 
+    var onClickListener: ((QiitaItem) -> Unit)? = null
+
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
         return ViewHolder(
             DataBindingUtil.inflate(
@@ -23,13 +25,16 @@ class QiitaItemAdapter(
     override fun getItemCount() = itemList.size
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        holder.onBind(itemList[position])
+        holder.onBind(itemList[position], onClickListener)
     }
 
     class ViewHolder(private val binding: ItemQiitaItemBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun onBind(item: QiitaItem) {
+        fun onBind(item: QiitaItem, listener: ((QiitaItem)-> Unit)?) {
             binding.item = item
+            binding.root.setOnClickListener {
+                listener?.invoke(item)
+            }
         }
     }
 
